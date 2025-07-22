@@ -41,7 +41,8 @@ const proceedToCheckout = async () => {
   // Save each cart item to backend
   for (const item of cartItems) {
     try {
-      const response = await fetch("http://localhost:5000/api/cart", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json"
